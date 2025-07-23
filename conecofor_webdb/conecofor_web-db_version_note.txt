@@ -1,0 +1,30 @@
+Note alla revisione agosto 2015
+
+
+- Adattamento dell'esportazione dati ICP secondo il formato ICP 2012. Il campo Team ID è stato compilato con il codice ISTAT della regione a cui appartiene il punto di campionamento.
+	
+- Sostituzione di ogni riferimento a Futmon con CONECOFOR nei testi e nel codice
+
+- Riunite le tabelle aree,piante,sintomi e cav nel database ad una per tutti gli anni e non una per ogni anno.Modifica sostanziale di tutto il codice per adattarsi alle nuove tabelle.
+
+- Aggiornati tutti i testi al charset UTF-8
+
+F360 G.C. agosto 2015
+
+
+Note alla revisione maggio 2011
+
+- Modificata in sql_futmon_webdb.sql la definizione sql della tabella futmon_cod_agente correggendo i nomi agente errati.
+
+- Modificata la query di esportazione ICP TRE e TRF in futmon_admin_export_icp_data_class.php in modo da escludere l’esportazione di:
+	- Aree non idonee
+	- piante afferenti da aree non idonee o con requisiti persi o non ritrovate
+	- sintomi afferenti da aree non idonee o da piante con requisiti persi o non ritrovate
+
+
+F360 G.C. agosto 2011
+
+
+
+G.C. 30 maggio 2011
+

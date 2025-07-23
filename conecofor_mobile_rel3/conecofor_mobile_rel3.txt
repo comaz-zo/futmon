@@ -1,0 +1,571 @@
+ArcPad Studio Build Log
+================================================================================
+ Project Type : APPLET
+  Output Path : E:\Developer\2017_CONECOFOR\sviluppo\encoded
+       Encode : Yes
+     Reformat : No
+Input Project : E:\DEVELOPER\2017_CONECOFOR\SVILUPPO\CONECOFOR_MOBILE_REL3\conecofor_mobile_rel3.apa
+       Output : E:\Developer\2017_CONECOFOR\sviluppo\encoded\conecofor_mobile_rel3.apa
+
+
+Processing <SCRIPT> elements and event handlers
+--------------------------------------------------------------------------------
+Scripting language : VBScript
+	Checking scripts for <APPLET> event handlers, language="VBScript"
+		'onload' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onload' script syntax ok
+		'onunload' script syntax ok
+		'onsetactive' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onok' script syntax ok
+		'onvalidate' script syntax ok
+		'onselchange' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onvalidate' script syntax ok
+		'onselchange' script syntax ok
+		'onselchange' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onunload' script syntax ok
+		'onsetactive' script syntax ok
+		'onvalidate' script syntax ok
+		'onquerycancel' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onselchange' script syntax ok
+		'onvalidate' script syntax ok
+		'onselchange' script syntax ok
+		'onvalidate' script syntax ok
+		'onload' script syntax ok
+		'onsetactive' script syntax ok
+		'onvalidate' script syntax ok
+		'onquerycancel' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onchange' script syntax ok
+		'onclick' script syntax ok
+		'onchange' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onchange' script syntax ok
+		'onclick' script syntax ok
+		'onselchange' script syntax ok
+		'onselchange' script syntax ok
+		'onvalidate' script syntax ok
+		'onchange' script syntax ok
+		'onload' script syntax ok
+		'onunload' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onvalidate' script syntax ok
+		'onquerycancel' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onunload' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onquerycancel' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onsetactive' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onclick' script syntax ok
+		'onclick' script syntax ok
+		'onchange' script syntax ok
+		'onselchange' script syntax ok
+		'onload' script syntax ok
+		'onsetactive' script syntax ok
+		'onvalidate' script syntax ok
+		'onselchange' script syntax ok
+		'onclick' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onload' script syntax ok
+		'onload' script syntax ok
+		'onvalidate' script syntax ok
+		'onposition' script syntax ok
+Found 1 <SCRIPT> element(s)
+
+299065 characters imbedded from E:\DEVELOPER\2017_CONECOFOR\SVILUPPO\CONECOFOR_MOBILE_REL3\conecofor_mobile_rel3.vbs
+
+Processing images
+--------------------------------------------------------------------------------
+Found 4 element(s) with 'image' attribute
+
+Image 'conecofor_tlb.bmp' was imbedded
+Image 'conecofor_set.bmp' was imbedded
+Image 'conecofor_lst.bmp' was imbedded
+Image 'conecofor_info.bmp' was imbedded
+
+Processing <FORMS>
+--------------------------------------------------------------------------------
+Found 1 <FORMS> element(s)
+	Found 17 form(s)
+	<FORM name="CONECOFOR_FormSet"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="S1"/>
+			Found 10 control(s)
+			<LABEL name="lblLayerAree"/>
+			<LABEL name="lblLayerAreeVal"/>
+			<LABEL name="lblLayerPiante"/>
+			<LABEL name="lblLayerPianteVal"/>
+			<LABEL name="lblLayerSintomi"/>
+			<LABEL name="lblLayerSintomiVal"/>
+			<LABEL name="lblLayerCav"/>
+			<LABEL name="lblLayerCavVal"/>
+			<LABEL name="lblLayerTabDec"/>
+			<LABEL name="lblLayerTabDecVal"/>
+	<FORM name="CONECOFOR_FormLISTAREE"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageLA1"/>
+			Found 18 control(s)
+			<BUTTON name="BtnPREV10"/>
+			<BUTTON name="BtnPREV"/>
+			<BUTTON name="BtnNEXT"/>
+			<BUTTON name="BtnNEXT10"/>
+			<EDIT name="EditID"/>
+			<BUTTON name="BtnNAV"/>
+			<BUTTON name="BtnNPM"/>
+			<BUTTON name="BtnDATIAREA"/>
+			<BUTTON name="BtnLISTPIANTE"/>
+			<BUTTON name="BtnRILDENDRO"/>
+			<LABEL name="LblIDONEITA"/>
+			<LABEL name="LblIDONEITAV"/>
+			<LABEL name="LblNOSINT"/>
+			<LABEL name="LblNOSINTV"/>
+			<LABEL name="LblNCAV"/>
+			<LABEL name="LblNCAVV"/>
+			<LABEL name="lblNHDOM"/>
+			<LABEL name="lblNHDOMV"/>
+	<FORM name="CONECOFOR_FormDATIAREA"/>
+		Found 3 <PAGE> element(s)
+		<PAGE name="PageDA1"/>
+			Found 15 control(s)
+			<LABEL name="LblPAESE"/>
+			<LABEL name="LblPAESEV"/>
+			<LABEL name="LblPROV"/>
+			<LABEL name="LblPROVV"/>
+			<LABEL name="LblCOMUNE"/>
+			<LABEL name="LblCOMUNEV"/>
+			<LABEL name="LblIDONEITA"/>
+			<COMBOBOX name="ComboIDONEITA"/>
+			<LABEL name="LblData"/>
+			<DATETIME name="Data"/>
+			<LABEL name="LblNominali"/>
+			<LABEL name="LblN"/>
+			<EDIT name="EditN"/>
+			<LABEL name="LblE"/>
+			<EDIT name="EditE"/>
+		<PAGE name="PageDA2"/>
+			Found 18 control(s)
+			<LABEL name="LblH2O"/>
+			<COMBOBOX name="ComboH20"/>
+			<LABEL name="LblHUMUS"/>
+			<COMBOBOX name="ComboHUMUS"/>
+			<LABEL name="LblALT"/>
+			<COMBOBOX name="ComboALT"/>
+			<LABEL name="LblESP"/>
+			<COMBOBOX name="ComboESP"/>
+			<LABEL name="LblETA"/>
+			<COMBOBOX name="ComboETA"/>
+			<LABEL name="LblCATFOR"/>
+			<BUTTON name="BtnCATFOR"/>
+			<EDIT name="EditCATFORID"/>
+			<EDIT name="EditCATFORTEXT"/>
+			<LABEL name="LblSCATFOR"/>
+			<BUTTON name="BtnSCATFOR"/>
+			<EDIT name="EditSCATFORID"/>
+			<EDIT name="EditSCATFORTEXT"/>
+		<PAGE name="PageDA3"/>
+			Found 15 control(s)
+			<LABEL name="LblPICCHC"/>
+			<COMBOBOX name="ComboPICCHC"/>
+			<LABEL name="LblTRASLC"/>
+			<COMBOBOX name="ComboTRASLC"/>
+			<LABEL name="LblTRASLC_A"/>
+			<EDIT name="EditTRASLC_A"/>
+			<LABEL name="LblTRASLC_D"/>
+			<EDIT name="EditTRASLC_D"/>
+			<BUTTON name="BtnPOSMED"/>
+			<LABEL name="LblNC"/>
+			<EDIT name="EditNC"/>
+			<LABEL name="LblEC"/>
+			<EDIT name="EditEC"/>
+			<LABEL name="LblFIXGPS"/>
+			<EDIT name="EditFIXGPSC"/>
+	<FORM name="CONECOFOR_FormLISTPIANTE"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageLP1"/>
+			Found 19 control(s)
+			<BUTTON name="BtnPREV10"/>
+			<BUTTON name="BtnPREV"/>
+			<BUTTON name="BtnNEXT"/>
+			<BUTTON name="BtnNEXT10"/>
+			<BUTTON name="BtnADD"/>
+			<BUTTON name="BtnDEL"/>
+			<EDIT name="EditNPIANTA"/>
+			<LABEL name="LblSPECIE"/>
+			<LABEL name="LblSPECIEV"/>
+			<LABEL name="LblRM"/>
+			<LABEL name="LblRMV"/>
+			<LABEL name="LblTRAS"/>
+			<LABEL name="LblTRASV"/>
+			<LABEL name="LblFRUT"/>
+			<LABEL name="LblFRUTV"/>
+			<LABEL name="lblSintomi"/>
+			<LABEL name="lblSintomiVal"/>
+			<BUTTON name="BtnDATIPIANTA"/>
+			<BUTTON name="BtnLISTSINTOMI"/>
+	<FORM name="CONECOFOR_FormDATIPIANTA"/>
+		Found 3 <PAGE> element(s)
+		<PAGE name="PageDP1"/>
+			Found 11 control(s)
+			<LABEL name="LblIdPIANTA"/>
+			<EDIT name="EditIdPIANTA"/>
+			<BUTTON name="BtnIMPORT"/>
+			<LABEL name="LblSPECIE"/>
+			<BUTTON name="BtnSPECIE"/>
+			<EDIT name="EditSPECIEID"/>
+			<EDIT name="EditSPECIETEXT"/>
+			<LABEL name="LblREM_MORT"/>
+			<COMBOBOX name="ComboRM"/>
+			<LABEL name="LblDENDRO"/>
+			<COMBOBOX name="ComboDENDRO"/>
+		<PAGE name="PageDP2"/>
+			Found 6 control(s)
+			<LABEL name="LblCH_VAL"/>
+			<COMBOBOX name="ComboCH_VAL"/>
+			<LABEL name="LblTRAS"/>
+			<COMBOBOX name="ComboTRAS"/>
+			<LABEL name="LblFRUT"/>
+			<COMBOBOX name="ComboFRUT"/>
+		<PAGE name="PageDP3"/>
+			Found 8 control(s)
+			<LABEL name="LblD1"/>
+			<EDIT name="EditD1"/>
+			<LABEL name="LblD2"/>
+			<EDIT name="EditD2"/>
+			<LABEL name="LblAZ"/>
+			<EDIT name="EditAZ"/>
+			<LABEL name="LblDIST"/>
+			<EDIT name="EditDIST"/>
+	<FORM name="CONECOFOR_FormLISTSINTOMI"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageLS1"/>
+			Found 14 control(s)
+			<BUTTON name="BtnPREV10"/>
+			<BUTTON name="BtnPREV"/>
+			<BUTTON name="BtnNEXT"/>
+			<BUTTON name="BtnNEXT10"/>
+			<BUTTON name="BtnADD"/>
+			<BUTTON name="BtnDEL"/>
+			<EDIT name="EditNSINTOMO"/>
+			<LABEL name="LblPARTE"/>
+			<LABEL name="LblPARTEV"/>
+			<LABEL name="LblSINT"/>
+			<LABEL name="LblSINTV"/>
+			<LABEL name="LblAGENTE"/>
+			<LABEL name="LblAGENTEV"/>
+			<BUTTON name="BtnDATISINTOMO"/>
+	<FORM name="CONECOFOR_FormDATISINTOMO"/>
+		Found 3 <PAGE> element(s)
+		<PAGE name="PageDS1"/>
+			Found 10 control(s)
+			<LABEL name="LblPARTE"/>
+			<BUTTON name="BtnPARTE"/>
+			<EDIT name="EditPARTEID"/>
+			<EDIT name="EditPARTETEXT"/>
+			<LABEL name="LblSINT"/>
+			<BUTTON name="BtnSINT"/>
+			<EDIT name="EditSINTID"/>
+			<EDIT name="EditSINTTEXT"/>
+			<LABEL name="LblETA"/>
+			<COMBOBOX name="ComboETA"/>
+		<PAGE name="PageDS2"/>
+			Found 12 control(s)
+			<LABEL name="LblAGENTE"/>
+			<BUTTON name="BtnAGENTE"/>
+			<EDIT name="EditAGENTEID"/>
+			<LABEL name="LblTrattino"/>
+			<EDIT name="EditAGENTETEXT"/>
+			<LABEL name="LblNOMEAGENTE"/>
+			<BUTTON name="BtnNOMEAGENTE"/>
+			<EDIT name="EditNOMEAGENTEID"/>
+			<LABEL name="LblCHIOMAVAL"/>
+			<COMBOBOX name="ComboCHIOMAVAL"/>
+			<LABEL name="LblDIFF"/>
+			<COMBOBOX name="ComboDIFF"/>
+		<PAGE name="PageDS3"/>
+			Found 2 control(s)
+			<LABEL name="lblNOTE"/>
+			<EDIT name="editNOTE"/>
+	<FORM name="FORM_NAV_MEDIA"/>
+		Found 4 <PAGE> element(s)
+		<PAGE name="PAGE_C"/>
+			Found 13 control(s)
+			<LABEL name="LBL_PROJ"/>
+			<EDIT name="EDIT_PROJ"/>
+			<CHECKBOX name="CHK_CUSTOM_C_P"/>
+			<LABEL name="LBL_CUSTOM_C_N"/>
+			<LABEL name="LBL_CUSTOM_C_E"/>
+			<EDIT name="EDIT_CUSTOM_C_N"/>
+			<EDIT name="EDIT_CUSTOM_C_E"/>
+			<CHECKBOX name="CHK_SELECTED_C_P"/>
+			<LABEL name="LBL_SELECTED_C_N"/>
+			<LABEL name="LBL_SELECTED_C_E"/>
+			<EDIT name="EDIT_SELECTED_C_N"/>
+			<EDIT name="EDIT_SELECTED_C_E"/>
+			<BUTTON name="BTN_SET_C"/>
+		<PAGE name="PAGE_F"/>
+			Found 18 control(s)
+			<CHECKBOX name="CHK_GPS_F_P"/>
+			<LABEL name="LBL_POS_E"/>
+			<LABEL name="LBL_POS_R"/>
+			<EDIT name="EDIT_GPS_POS_E"/>
+			<LABEL name="LBL_GPS_POS_R"/>
+			<BUTTON name="BTN_REC_GPS_F"/>
+			<BUTTON name="BTN_STOP_GPS_F"/>
+			<BUTTON name="BTN_RESET_GPS_F"/>
+			<LABEL name="LBL_GPS_F_N"/>
+			<LABEL name="LBL_GPS_F_E"/>
+			<EDIT name="EDIT_GPS_F_N"/>
+			<EDIT name="EDIT_GPS_F_E"/>
+			<CHECKBOX name="CHK_CUSTOM_F_P"/>
+			<LABEL name="LBL_CUSTOM_F_N"/>
+			<LABEL name="LBL_CUSTOM_F_E"/>
+			<EDIT name="EDIT_CUSTOM_F_N"/>
+			<EDIT name="EDIT_CUSTOM_F_E"/>
+			<BUTTON name="BTN_SET_F"/>
+		<PAGE name="PAGE_CONST"/>
+			Found 3 control(s)
+			<LABEL name="LBL_CONST_C"/>
+			<EDIT name="EDIT_CONST_C"/>
+			<BUTTON name="BTN_SET_PARAM_C"/>
+		<PAGE name="PAGE_AID"/>
+			Found 10 control(s)
+			<BUTTON name="BTN_GET_HD_A"/>
+			<LABEL name="LBL_HDIST"/>
+			<LABEL name="LBL_HDIST_VAL"/>
+			<LABEL name="LBL_A"/>
+			<LABEL name="LBL_A_VAL"/>
+			<LABEL name="LBL_INCL"/>
+			<EDIT name="EDIT_INCL"/>
+			<BUTTON name="BTN_GET_ID"/>
+			<LABEL name="LBL_IDIST"/>
+			<LABEL name="LBL_IDIST_VAL"/>
+	<FORM name="FORM_POSIZIONAMENTO"/>
+		Found 4 <PAGE> element(s)
+		<PAGE name="PAGE_AID"/>
+			Found 10 control(s)
+			<LABEL name="LBL_HDIST"/>
+			<EDIT name="EDIT_HDIST_VAL"/>
+			<LABEL name="LBL_A"/>
+			<EDIT name="EDIT_A_VAL"/>
+			<LABEL name="LBL_INCL"/>
+			<EDIT name="EDIT_INCL"/>
+			<BUTTON name="BTN_GET_ID"/>
+			<LABEL name="LBL_IDIST"/>
+			<LABEL name="LBL_IDIST_VAL"/>
+			<BUTTON name="BTN_SET_PARAM_AID"/>
+		<PAGE name="PAGE_CONST"/>
+			Found 3 control(s)
+			<LABEL name="LBL_CONST_C"/>
+			<EDIT name="EDIT_CONST_C"/>
+			<BUTTON name="BTN_SET_PARAM_C"/>
+		<PAGE name="PAGE_F"/>
+			Found 12 control(s)
+			<LABEL name="LBL_POS_E"/>
+			<LABEL name="LBL_POS_R"/>
+			<EDIT name="EDIT_GPS_POS_E"/>
+			<LABEL name="LBL_GPS_POS_R"/>
+			<BUTTON name="BTN_REC_GPS_F"/>
+			<BUTTON name="BTN_STOP_GPS_F"/>
+			<BUTTON name="BTN_RESET_GPS_F"/>
+			<LABEL name="LBL_GPS_F_N"/>
+			<LABEL name="LBL_GPS_F_E"/>
+			<EDIT name="EDIT_GPS_F_N"/>
+			<EDIT name="EDIT_GPS_F_E"/>
+			<BUTTON name="BTN_SET_F"/>
+		<PAGE name="PAGE_C"/>
+			Found 10 control(s)
+			<LABEL name="LBL_PROJ"/>
+			<EDIT name="EDIT_PROJ"/>
+			<BUTTON name="BTN_GET_C_POS"/>
+			<LABEL name="LBL_SELECTED_C_N"/>
+			<LABEL name="LBL_SELECTED_C_N"/>
+			<LABEL name="LBL_SELECTED_C_N_VAL"/>
+			<LABEL name="LBL_SELECTED_C_E"/>
+			<LABEL name="LBL_SELECTED_C_E_VAL"/>
+			<LABEL name="LBL_SELECTED_C_POS"/>
+			<LABEL name="LBL_SELECTED_C_POS_VAL"/>
+	<FORM name="CONECOFOR_FormRILDENDRO"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageLA1"/>
+			Found 2 control(s)
+			<BUTTON name="BtnCAV"/>
+			<BUTTON name="BtnHDOM"/>
+	<FORM name="CONECOFOR_FormCAV"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageC1"/>
+			Found 22 control(s)
+			<BUTTON name="BtnPREV10"/>
+			<BUTTON name="BtnPREV"/>
+			<BUTTON name="BtnNEXT"/>
+			<BUTTON name="BtnNEXT10"/>
+			<BUTTON name="BtnADD"/>
+			<BUTTON name="BtnREPEAT"/>
+			<BUTTON name="BtnDEL"/>
+			<EDIT name="EditNCAV"/>
+			<LABEL name="LblSPECIE"/>
+			<LABEL name="LblSPECIEID"/>
+			<LABEL name="LblSPECIETEXT"/>
+			<LABEL name="LblD1"/>
+			<LABEL name="LblD1V"/>
+			<LABEL name="LblD2"/>
+			<LABEL name="LblD2V"/>
+			<LABEL name="LblALTEZZA"/>
+			<LABEL name="LblALTEZZAV"/>
+			<LABEL name="LblALTEZZAV"/>
+			<LABEL name="LblALTEZZAVM"/>
+			<LABEL name="LblDENDRO"/>
+			<LABEL name="LblDENDROV"/>
+			<BUTTON name="BtnSPECIE"/>
+	<FORM name="CONECOFOR_FormCAVNEW"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageC1"/>
+			Found 15 control(s)
+			<BUTTON name="BtnIMPORT"/>
+			<LABEL name="LblSPECIE"/>
+			<BUTTON name="BtnSPECIE"/>
+			<EDIT name="EditSPECIEID"/>
+			<EDIT name="EditSPECIETEXT"/>
+			<LABEL name="LblD1"/>
+			<EDIT name="EditD1"/>
+			<LABEL name="LblD2"/>
+			<EDIT name="EditD2"/>
+			<LABEL name="LblALTEZZA"/>
+			<COMBOBOX name="ComboALTEZZA"/>
+			<LABEL name="LblALTEZZAV"/>
+			<EDIT name="EditALTEZZAV"/>
+			<LABEL name="LblDENDRO"/>
+			<COMBOBOX name="ComboDENDRO"/>
+	<FORM name="CONECOFOR_FormHDOM"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="PageHD1"/>
+			Found 7 control(s)
+			<LABEL name="LblID"/>
+			<LABEL name="LblDm"/>
+			<LABEL name="LblSpecie"/>
+			<LISTBOX name="lbox"/>
+			<LABEL name="LblALTEZZAV"/>
+			<EDIT name="EditALTEZZAV"/>
+			<BUTTON name="BtnSETH"/>
+	<FORM name="FrmLISTBOX"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="page1"/>
+			Found 1 control(s)
+			<LISTBOX name="lbox1"/>
+	<FORM name="FrmLISTBOX_NOVALUES"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="page1"/>
+			Found 1 control(s)
+			<LISTBOX name="lbox1"/>
+	<FORM name="INFOFORM"/>
+		Found 2 <PAGE> element(s)
+		<PAGE name="LICENCE"/>
+			Found 5 control(s)
+			<LABEL name="Lbl1"/>
+			<LABEL name="Lbl2"/>
+			<LABEL name="Lbl2"/>
+			<LABEL name="Lbl3"/>
+			<LABEL name="Lbl4"/>
+		<PAGE name="INFO"/>
+			Found 1 control(s)
+			<EDIT name="editINFO"/>
+	<FORM name="FrmGET_VALUE"/>
+		Found 1 <PAGE> element(s)
+		<PAGE name="page1"/>
+			Found 2 control(s)
+			<LABEL name="Lbl1"/>
+			<EDIT name="Edit1"/>
+================================================================================
+Compile completed with 0 warning(s)
+--------------------------------------------------------------------------------
+
+Found 0 <DEPENDENCY> elements
+================================================================================
+Project Summary
+--------------------------------------------------------------------------------
+       Project Type : APPLET
+        Output Path : E:\Developer\2017_CONECOFOR\sviluppo\encoded
+            Encoded : Yes
+        Output Size : 384774 bytes (375.76 kb)
+--------------------------------------------------------------------------------
+The following 1 file(s) are required for deployment of your project :
+--------------------------------------------------------------------------------
+E:\Developer\2017_CONECOFOR\sviluppo\encoded\conecofor_mobile_rel3.apa
+================================================================================

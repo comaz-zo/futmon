@@ -1,0 +1,571 @@
+<ArcPad debug="true">
+	<APPLET onload="Call CEF_load_applet()">
+		<TOOLBARS>
+			<TOOLBAR name="CONECOFOR_Toolbar" caption="CONECOFOR" visible="true" image="conecofor_tlb.bmp">
+				<TOOLBUTTON onclick="Call CEF_show_FrmSet()" name="CONECOFOR_BtnSetLayer" shortcut="" image="conecofor_set.bmp"/>
+				<TOOLBUTTON onclick="Call CEF_show_FrmList()" name="CONECOFOR_BtnList" shortcut="" image="conecofor_lst.bmp"/>
+				<TOOLBUTTON onclick="Call CEF_info_click()" name="CONECOFOR_BtnInfo" shortcut="" image="conecofor_info.bmp"/>
+			</TOOLBAR>
+		</TOOLBARS>
+		<FORMS>
+			<FORM name="CONECOFOR_FormSet" caption="Imposta Shapefile CONECOFOR" width="130" height="130" tabsvisible="false" onload="Call CEF_FrmSet_onload()">
+				<PAGE name="S1" caption="Page1" onvalidate="CEF_FrmSet_PS1_onvalidate()">
+					<LABEL name="lblLayerAree" x="1" y="0" width="100" height="10" caption="Layer CONECOFOR AREE:" fontstyle="bold" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerAreeVal" x="30" y="12" width="100" height="10" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerPiante" x="1" y="24" width="100" height="10" caption="Layer CONECOFOR PIANTE:" fontstyle="bold" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerPianteVal" x="30" y="36" width="100" height="10" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerSintomi" x="1" y="48" width="100" height="10" caption="DBF CONECOFOR SINTOMI:" fontstyle="bold" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerSintomiVal" x="30" y="60" width="100" height="10" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerCav" x="1" y="72" width="100" height="10" caption="DBF CONECOFOR CAV:" fontstyle="bold" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerCavVal" x="30" y="84" width="100" height="10" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerTabDec" x="1" y="96" width="100" height="10" caption="DBF TABDEC:" fontstyle="bold" tooltip="" group="true" border="false"/>
+					<LABEL name="lblLayerTabDecVal" x="30" y="108" width="100" height="10" caption="" tooltip="" group="true" border="false"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormLISTAREE" caption="LISTA AREE" width="130" height="130" tabsvisible="false" onload="Call CEF_FormLISTAREE_onload()" onunload="Call CEF_FormLISTAREE_onunload()">
+				<PAGE name="PageLA1" caption="LA1" sip="false" onsetactive="Call CEF_FormLISTAREE_LA1_setactive()">
+					<BUTTON name="BtnPREV10" width="14" height="14" caption="&lt;&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTAREE_BtnPREV10_click()"/>
+					<BUTTON name="BtnPREV" x="14" width="14" height="14" caption="&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTAREE_BtnPREV_click()"/>
+					<BUTTON name="BtnNEXT" x="100" width="14" height="14" caption="&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTAREE_BtnNEXT_click()"/>
+					<BUTTON name="BtnNEXT10" x="114" width="14" height="14" caption="&gt;&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTAREE_BtnNEXT10_click()"/>
+					<EDIT name="EditID" x="28" width="72" height="14" defaultvalue="" tooltip="" tabstop="true" border="true" readonly="true" sip="false" alignment="center"/>
+					<BUTTON name="BtnNAV" x="0" y="18" width="64" height="20" onclick="Call CEF_btnNAV_Click()" caption="NAV ISTANT." tooltip="" tabstop="true" border="false" alignment="center"/>
+					<BUTTON name="BtnNPM" x="64" y="18" width="64" height="20" onclick="Call CEF_btnNPM_Click()" caption="NAV MEDIA" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<BUTTON name="BtnDATIAREA" x="0" y="38" width="43" height="20" onclick="Call CEF_btnDATIAREA_Click()" caption="DATI AREA" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<BUTTON name="BtnLISTPIANTE" x="44" y="38" width="42" height="20" onclick="Call CEF_btnLISTPIANTE_Click()" caption="RICH" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<BUTTON name="BtnRILDENDRO" x="86" y="38" width="42" height="20" onclick="Call CEF_btnRILDENDRO_Click()" caption="RIDIA" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<LABEL name="LblIDONEITA" x="1" y="70" width="50" height="12" caption="Idoneita'" tooltip="" group="true" border="false"/>
+					<LABEL name="LblIDONEITAV" x="55" y="70" width="60" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblNOSINT" x="1" y="84" width="90" height="12" caption="Sintomi da inserire" tooltip="" group="true" border="false"/>
+					<LABEL name="LblNOSINTV" x="91" y="84" width="20" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblNCAV" x="1" y="98" width="90" height="12" caption="N Piante RIDIA" tooltip="" group="true" border="false"/>
+					<LABEL name="LblNCAVV" x="91" y="98" width="20" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="lblNHDOM" x="1" y="112" width="90" height="12" caption="N Altezze dom. RIDIA" tooltip="" group="true" border="false"/>
+					<LABEL name="lblNHDOMV" x="91" y="112" width="20" height="12" caption="" tooltip="" group="true" border="false"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormDATIAREA" caption="AREA" width="130" height="130" onload="Call CEF_FormDATIAREA_onload()" onok="Call CEF_FormDATIAREA_onok()">
+				<PAGE name="PageDA1" caption="DA1" onvalidate="Call CEF_FormDATIAREA_DA1_validate()">
+					<LABEL name="LblPAESE" x="1" y="0" width="50" height="12" caption="Paese" tooltip="" group="true" border="false"/>
+					<LABEL name="LblPAESEV" x="55" y="0" width="70" height="12" caption="---" tooltip="" group="true" border="false"/>
+					<LABEL name="LblPROV" x="1" y="14" width="50" height="12" caption="Provincia" tooltip="" group="true" border="false"/>
+					<LABEL name="LblPROVV" x="55" y="14" width="70" height="12" caption="---" tooltip="" group="true" border="false"/>
+					<LABEL name="LblCOMUNE" x="1" y="28" width="50" height="12" caption="Comune" tooltip="" group="true" border="false"/>
+					<LABEL name="LblCOMUNEV" x="55" y="28" width="70" height="12" caption="---" tooltip="" group="true" border="false"/>
+					<LABEL name="LblIDONEITA" x="1" y="42" width="50" height="12" caption="Idoneita'" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboIDONEITA" x="55" y="42" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false" onselchange="Call CEF_FormDATIAREA_DA1_ComboIDONEITA_onselchange()">
+						<LISTITEM value="1" text="1 Idonea"/>
+						<LISTITEM value="2" text="2 Non idonea"/>
+						<LISTITEM value="3" text="3 Idonea non rilevabile"/>
+					</COMBOBOX>
+					<LABEL name="LblData" x="1" y="56" width="50" height="12" caption="Data" tooltip="" group="true" border="false"/>
+					<DATETIME name="Data" x="55" y="56" width="70" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblNominali" x="1" y="72" width="120" height="12" caption="Coordinate nominali geografiche" tooltip="" group="true" border="false"/>
+					<LABEL name="LblN" x="1" y="84" width="70" height="12" caption="Lat (ddmmss)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditN" x="75" y="84" width="50" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false"/>
+					<LABEL name="LblE" x="1" y="98" width="70" height="12" caption="Long (ddmmss)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditE" x="75" y="98" width="50" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false"/>
+				</PAGE>
+				<PAGE name="PageDA2" caption="DA2" onvalidate="Call CEF_FormDATIAREA_DA2_validate()">
+					<LABEL name="LblH2O" x="1" y="0" width="50" height="12" caption="Disp. Acqua" required="true" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboH20" x="55" y="0" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 insuffic."/>
+						<LISTITEM value="2" text="2 sufficiente"/>
+						<LISTITEM value="3" text="3 eccessiva"/>
+					</COMBOBOX>
+					<LABEL name="LblHUMUS" x="1" y="14" width="50" height="12" caption="Tipo Humus" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboHUMUS" x="55" y="14" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 Mull"/>
+						<LISTITEM value="2" text="2 Moder"/>
+						<LISTITEM value="3" text="3 Mor"/>
+						<LISTITEM value="4" text="4 Anmor"/>
+						<LISTITEM value="5" text="5 Torba"/>
+						<LISTITEM value="6" text="6 Altri tipi"/>
+						<LISTITEM value="7" text="7 H. grezzo"/>
+					</COMBOBOX>
+					<LABEL name="LblALT" x="1" y="28" width="50" height="12" caption="Altitudine" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboALT" x="55" y="28" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="minore 50m"/>
+						<LISTITEM value="2" text="51 - 100m"/>
+						<LISTITEM value="3" text="101 - 150 m"/>
+						<LISTITEM value="4" text="151 - 200 m"/>
+						<LISTITEM value="5" text="201 - 250 m"/>
+						<LISTITEM value="6" text="251 - 300 m"/>
+						<LISTITEM value="7" text="301 - 350 m"/>
+						<LISTITEM value="8" text="351 - 400 m"/>
+						<LISTITEM value="9" text="401 - 450 m"/>
+						<LISTITEM value="10" text="451 - 500 m"/>
+						<LISTITEM value="11" text="501 - 550 m"/>
+						<LISTITEM value="12" text="551 - 600 m"/>
+						<LISTITEM value="13" text="601 - 650 m"/>
+						<LISTITEM value="14" text="651 - 700 m"/>
+						<LISTITEM value="15" text="701 - 750 m"/>
+						<LISTITEM value="16" text="751 - 800 m"/>
+						<LISTITEM value="17" text="801 - 850 m"/>
+						<LISTITEM value="18" text="851 - 900 m"/>
+						<LISTITEM value="19" text="901 - 950 m"/>
+						<LISTITEM value="20" text="951 - 1000 m"/>
+						<LISTITEM value="21" text="1001 - 1050 m"/>
+						<LISTITEM value="22" text="1051 - 1100 m"/>
+						<LISTITEM value="23" text="1101 - 1150 m"/>
+						<LISTITEM value="24" text="1151 - 1200 m"/>
+						<LISTITEM value="25" text="1201 - 1250 m"/>
+						<LISTITEM value="26" text="1251 - 1300 m"/>
+						<LISTITEM value="27" text="1301 - 1350 m"/>
+						<LISTITEM value="28" text="1351 - 1400 m"/>
+						<LISTITEM value="29" text="1401 - 1450 m"/>
+						<LISTITEM value="30" text="1451 - 1500 m"/>
+						<LISTITEM value="31" text="1501 - 1550 m"/>
+						<LISTITEM value="32" text="1551 - 1600 m"/>
+						<LISTITEM value="33" text="1601 - 1650 m"/>
+						<LISTITEM value="34" text="1651 - 1700 m"/>
+						<LISTITEM value="35" text="1701 - 1750 m"/>
+						<LISTITEM value="36" text="1751 - 1800 m"/>
+						<LISTITEM value="37" text="1801 - 1850 m"/>
+						<LISTITEM value="38" text="1851 - 1900 m"/>
+						<LISTITEM value="39" text="1901 - 1950 m"/>
+						<LISTITEM value="40" text="1951 - 2000 m"/>
+						<LISTITEM value="41" text="2001 - 2050 m"/>
+						<LISTITEM value="42" text="2051 - 2100 m"/>
+						<LISTITEM value="43" text="2101 - 2150 m"/>
+						<LISTITEM value="44" text="2151 - 2200 m"/>
+						<LISTITEM value="45" text="2201 - 2250 m"/>
+						<LISTITEM value="46" text="2251 - 2300 m"/>
+						<LISTITEM value="47" text="2301 - 2350 m"/>
+						<LISTITEM value="48" text="2351 - 2400 m"/>
+						<LISTITEM value="49" text="2401 - 2450 m"/>
+						<LISTITEM value="50" text="2451 - 2500 m"/>
+						<LISTITEM value="51" text="maggiore 2500 m"/>
+					</COMBOBOX>
+					<LABEL name="LblESP" x="1" y="42" width="50" height="12" caption="Esposizione" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboESP" x="55" y="42" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 Nord"/>
+						<LISTITEM value="2" text="2 Nord Est"/>
+						<LISTITEM value="3" text="3 Est"/>
+						<LISTITEM value="4" text="4 Sud Est"/>
+						<LISTITEM value="5" text="5 Sud"/>
+						<LISTITEM value="6" text="6 Sud Ovest"/>
+						<LISTITEM value="7" text="7 Ovest"/>
+						<LISTITEM value="8" text="8 Nord Ovest"/>
+						<LISTITEM value="9" text="9 Piano"/>
+					</COMBOBOX>
+					<LABEL name="LblETA" x="1" y="56" width="50" height="12" caption="Eta' dominante" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboETA" x="55" y="56" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 0-20 anni"/>
+						<LISTITEM value="2" text="2 21-40 a."/>
+						<LISTITEM value="3" text="3 41-60 a."/>
+						<LISTITEM value="4" text="4 61-80 a."/>
+						<LISTITEM value="5" text="5 81-100 a."/>
+						<LISTITEM value="6" text="6 101-120 a."/>
+						<LISTITEM value="7" text="7 maggiore 120 a."/>
+						<LISTITEM value="8" text="8 disetaneo"/>
+					</COMBOBOX>
+					<LABEL name="LblCATFOR" x="1" y="74" width="50" height="12" caption="Cat. For. INFC" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnCATFOR" x="93" y="74" width="30" height="10" onclick="Call CEF_FormDATIAREA_BtnCATFOR_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditCATFORID" x="1" y="86" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<EDIT name="EditCATFORTEXT" x="21" y="86" width="100" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<LABEL name="LblSCATFOR" x="1" y="104" width="50" height="12" caption="Sottocat. For." tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnSCATFOR" x="93" y="104" width="30" height="10" onclick="Call CEF_FormDATIAREA_BtnSCATFOR_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditSCATFORID" x="1" y="116" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<EDIT name="EditSCATFORTEXT" x="21" y="116" width="100" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+				</PAGE>
+				<PAGE name="PageDA3" caption="DA3" onvalidate="Call CEF_FormDATIAREA_DA3_validate()">
+					<LABEL name="LblPICCHC" x="1" y="1" width="90" height="12" caption="Ritrovato picchetto C" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboPICCHC" x="99" y="1" width="26" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false" onselchange="Call CEF_FormDATIAREA_DA3_ComboPICCHC_onselchange()">
+						<LISTITEM value="1" text="SI"/>
+						<LISTITEM value="2" text="NO"/>
+					</COMBOBOX>
+					<LABEL name="LblTRASLC" x="1" y="15" width="90" height="12" caption="Traslazione picchetto C" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboTRASLC" x="99" y="15" width="26" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false" onselchange="Call CEF_FormDATIAREA_DA3_ComboTRASLC_onselchange()">
+						<LISTITEM value="1" text="SI"/>
+						<LISTITEM value="2" text="NO"/>
+					</COMBOBOX>
+					<LABEL name="LblTRASLC_A" x="1" y="32" width="44" height="12" caption="Trasl. Azimut" tooltip="" group="true" border="false"/>
+					<EDIT name="EditTRASLC_A" x="45" y="32" width="26" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblTRASLC_D" x="78" y="32" width="20" height="12" caption="Dist." tooltip="" group="true" border="false"/>
+					<EDIT name="EditTRASLC_D" x="99" y="32" width="26" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<BUTTON name="BtnPOSMED" x="24" y="55" width="80" height="14" onclick="Call CEF_btnPOSMED_Click()" caption="POSIZIONAMENTO" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<LABEL name="LblNC" x="1" y="71" width="70" height="12" caption="N UTM-WGS84 C" tooltip="" group="true" border="false"/>
+					<EDIT name="EditNC" x="75" y="71" width="50" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblEC" x="1" y="85" width="70" height="12" caption="E UTM-WGS84 C" tooltip="" group="true" border="false"/>
+					<EDIT name="EditEC" x="75" y="85" width="50" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblFIXGPS" x="1" y="99" width="70" height="12" caption="FIX GPS su C" tooltip="" group="true" border="false"/>
+					<EDIT name="EditFIXGPSC" x="75" y="99" width="50" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormLISTPIANTE" caption="PIANTE AREA" width="130" height="130" onload="Call CEF_FormLISTPIANTE_onload()" onunload="Call CEF_FormLISTPIANTE_onunload()" tabsvisible="false">
+				<PAGE name="PageLP1" caption="LP1" onsetactive="Call CEF_FormLISTPIANTE_LP1_setactive()" onvalidate="Call CEF_FormLISTPIANTE_LP1_onvalidate" onquerycancel="Call CEF_FormLISTPIANTE_LP1_onquerycancel()">
+					<BUTTON name="BtnPREV10" width="14" height="14" caption="&lt;&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTPIANTE_BtnPREV10_click()"/>
+					<BUTTON name="BtnPREV" x="14" width="14" height="14" caption="&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTPIANTE_BtnPREV_click()"/>
+					<BUTTON name="BtnNEXT" x="72" width="14" height="14" caption="&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTPIANTE_BtnNEXT_click()"/>
+					<BUTTON name="BtnNEXT10" x="86" width="14" height="14" caption="&gt;&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTPIANTE_BtnNEXT10_click()"/>
+					<BUTTON name="BtnADD" x="100" width="14" height="14" caption="+" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTPIANTE_BtnPLUS_click()"/>
+					<BUTTON name="BtnDEL" x="114" width="14" height="14" caption="-" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTPIANTE_BtnMINUS_click()"/>
+					<EDIT name="EditNPIANTA" x="28" width="44" height="14" defaultvalue="" tooltip="" tabstop="true" border="true" readonly="true" sip="false" alignment="center"/>
+					<LABEL name="LblSPECIE" x="1" y="28" width="50" height="12" caption="Specie" tooltip="" group="true" border="false"/>
+					<LABEL name="LblSPECIEV" x="55" y="28" width="50" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblRM" x="1" y="42" width="50" height="12" caption="Rimoz./mort." tooltip="" group="true" border="false"/>
+					<LABEL name="LblRMV" x="55" y="42" width="65" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblTRAS" x="1" y="56" width="50" height="12" caption="Trasparenza" tooltip="" group="true" border="false"/>
+					<LABEL name="LblTRASV" x="55" y="56" width="50" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblFRUT" x="1" y="70" width="50" height="12" caption="Fruttificazione" tooltip="" group="true" border="false"/>
+					<LABEL name="LblFRUTV" x="55" y="70" width="50" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="lblSintomi" x="1" y="85" width="64" height="10" caption="Sintomi presenti:" tooltip="" group="true" border="false"/>
+					<LABEL name="lblSintomiVal" x="95" y="85" width="18" height="10" caption="" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnDATIPIANTA" x="10" y="104" width="108" height="12" caption="DATI PIANTA" onclick="Call CEF_btnDATIPIANTA_Click()" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<BUTTON name="BtnLISTSINTOMI" x="10" y="116" width="108" height="12" caption="SINTOMI/SEGNI" onclick="Call CEF_btnLISTSINTOMI_Click()" tooltip="" tabstop="true" border="false" alignment="center"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormDATIPIANTA" caption="DATI PIANTA" width="130" height="130" onload="Call CEF_FormDATIPIANTA_onload()">
+				<PAGE name="PageDP1" caption="DP1" onvalidate="Call CEF_FormDATIPIANTA_DP1_validate()">
+					<LABEL name="LblIdPIANTA" x="1" width="50" height="12" caption="ID PIANTA" tooltip="" group="true" border="false"/>
+					<EDIT name="EditIdPIANTA" x="55" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false" backgroundcolor="White"/>
+					<BUTTON name="BtnIMPORT" x="83" width="40" height="10" onclick="Call CEF_FormDATIPIANTA_DP1_BtnIMPORT_Click()" caption="IMPORT" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<LABEL name="LblSPECIE" x="1" y="14" width="50" height="12" caption="Specie" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnSPECIE" x="93" y="14" width="30" height="10" onclick="Call CEF_FormDATIPIANTA_DP1_BtnSPECIE_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditSPECIEID" x="1" y="32" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="White"/>
+					<EDIT name="EditSPECIETEXT" x="21" y="32" width="100" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="White"/>
+					<LABEL name="LblREM_MORT" y="50" width="90" height="12" caption="Rimozione Mortalita'" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboRM" x="1" y="62" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" onselchange="CEF_FormDATIPIANTA_DP1_ComboRM_onselchange()" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+					</COMBOBOX>
+					<LABEL name="LblDENDRO" x="1" y="80" width="50" height="12" caption="Dendrotipo" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboDENDRO" x="1" y="92" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 - Alto fusto"/>
+						<LISTITEM value="2" text="2 - Pollone"/>
+						<LISTITEM value="3" text="3 - Matricina"/>
+						<LISTITEM value="4" text="4 - Non determ."/>
+					</COMBOBOX>
+				</PAGE>
+				<PAGE name="PageDP2" caption="DP2" onvalidate="Call CEF_FormDATIPIANTA_DP2_validate()">
+					<LABEL name="LblCH_VAL" x="1" width="90" height="12" caption="Metodo valutazione chioma" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboCH_VAL" x="1" y="12" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="4" text="4 - Parte della chioma senza effetti della competizione"/>
+					</COMBOBOX>
+					<LABEL name="LblTRAS" x="1" y="30" width="90" height="12" caption="Trasparenza" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboTRAS" x="1" y="42" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" onselchange="Call CEF_FormDATIPIANTA_DP2_ComboTRAS_onselchange()" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="" text="Inserire valore"/>
+                        <LISTITEM value="0" text="000% nessuna"/>
+						<LISTITEM value="5" text="005%"/>
+						<LISTITEM value="10" text="010%"/>
+						<LISTITEM value="15" text="015%"/>
+						<LISTITEM value="20" text="020%"/>
+						<LISTITEM value="25" text="025%"/>
+						<LISTITEM value="30" text="030%"/>
+						<LISTITEM value="35" text="035%"/>
+						<LISTITEM value="40" text="040%"/>
+						<LISTITEM value="45" text="045%"/>
+						<LISTITEM value="50" text="050%"/>
+						<LISTITEM value="55" text="055%"/>
+						<LISTITEM value="60" text="060%"/>
+						<LISTITEM value="65" text="065%"/>
+						<LISTITEM value="70" text="070%"/>
+						<LISTITEM value="75" text="075%"/>
+						<LISTITEM value="80" text="080%"/>
+						<LISTITEM value="85" text="085%"/>
+						<LISTITEM value="90" text="090%"/>
+						<LISTITEM value="95" text="095%"/>
+						<LISTITEM value="99" text="099% spoglia"/>
+						<LISTITEM value="100" text="100% morta"/>
+					</COMBOBOX>
+					<LABEL name="LblFRUT" x="1" y="60" width="90" height="12" caption="Fruttificazione" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboFRUT" x="1" y="72" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="" text="Inserire valore"/>
+                        <LISTITEM value="1.1" text="1.1 - assente"/>
+						<LISTITEM value="1.2" text="1.2 - scarsa"/>
+						<LISTITEM value="2" text="2 - comune"/>
+						<LISTITEM value="3" text="3 - abbondante"/>
+					</COMBOBOX>
+				</PAGE>
+				<PAGE name="PageDP3" caption="DP3" onvalidate="Call CEF_FormDATIPIANTA_DP3_validate()">
+					<LABEL name="LblD1" x="1" width="35" height="12" caption="D1 (cm)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditD1" x="55" width="30" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblD2" x="1" y="14" width="35" height="12" caption="D2 (cm)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditD2" x="55" y="14" width="30" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblAZ" x="1" y="28" width="35" height="12" caption="Azimut (o)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditAZ" x="55" y="28" width="30" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblDIST" x="1" y="42" width="35" height="12" caption="Dist. (m)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditDIST" x="55" y="42" width="30" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormLISTSINTOMI" caption="SINTOMI PIANTA" width="130" height="130" onload="Call CEF_FormLISTSINTOMI_onload()" tabsvisible="false">
+				<PAGE name="PageLS1" caption="LS1" onsetactive="Call CEF_FormLISTSINTOMI_LS1_setactive()" onvalidate="Call CEF_FormLISTSINTOMI_LS1_onvalidate()" onquerycancel="Call CEF_FormLISTSINTOMI_LS1_onquerycancel()">
+					<BUTTON name="BtnPREV10" width="14" height="14" caption="&lt;&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTSINTOMI_BtnPREV10_click()"/>
+					<BUTTON name="BtnPREV" x="14" width="14" height="14" caption="&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTSINTOMI_BtnPREV_click()"/>
+					<BUTTON name="BtnNEXT" x="72" width="14" height="14" caption="&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTSINTOMI_BtnNEXT_click()"/>
+					<BUTTON name="BtnNEXT10" x="86" width="14" height="14" caption="&gt;&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTSINTOMI_BtnNEXT10_click()"/>
+					<BUTTON name="BtnADD" x="100" width="14" height="14" caption="+" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTSINTOMI_BtnPLUS_click"/>
+					<BUTTON name="BtnDEL" x="114" width="14" height="14" caption="-" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormLISTSINTOMI_BtnMINUS_click"/>
+					<EDIT name="EditNSINTOMO" x="28" width="44" height="14" defaultvalue="" tooltip="" tabstop="true" border="true" readonly="true" sip="false" alignment="center"/>
+					<LABEL name="LblPARTE" x="1" y="26" width="50" height="12" caption="Parte" tooltip="" group="true" border="false"/>
+					<LABEL name="LblPARTEV" x="55" y="26" width="50" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblSINT" x="1" y="40" width="50" height="12" caption="Sintomo" tooltip="" group="true" border="false"/>
+					<LABEL name="LblSINTV" x="55" y="40" width="50" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblAGENTE" x="1" y="54" width="50" height="12" caption="Agente" tooltip="" group="true" border="false"/>
+					<LABEL name="LblAGENTEV" x="55" y="54" width="50" height="12" caption="" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnDATISINTOMO" x="10" y="116" width="108" height="12" caption="DATI SINTOMO" onclick="Call CEF_btnDATISINTOMO_Click()" tooltip="" tabstop="true" border="false" alignment="center"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormDATISINTOMO" caption="SINTOMO" width="130" height="130" onload="Call CEF_FormDATISINTOMO_onload()">
+				<PAGE name="PageDS1" caption="S1" onvalidate="Call CEF_FormDATISINTOMO_DS1_validate()">
+					<LABEL name="LblPARTE" x="1" y="0" width="50" height="12" caption="Parte" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnPARTE" x="93" y="0" width="30" height="10" onclick="Call CEF_FormDATISINTOMO_BtnPARTE_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditPARTEID" x="1" y="12" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white" onchange="Call CEF_FormDATISINTOMO_DS1_EditPARTEID_onchange()"/>
+					<EDIT name="EditPARTETEXT" x="21" y="12" width="100" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<LABEL name="LblSINT" x="1" y="26" width="50" height="12" caption="Sintomo" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnSINT" x="93" y="26" width="30" height="10" onclick="Call CEF_FormDATISINTOMO_BtnSINT_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditSINTID" x="1" y="38" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white" onchange="Call CEF_FormDATISINTOMO_DS1_EditSINTID_onchange()"/>
+					<EDIT name="EditSINTTEXT" x="21" y="38" width="100" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<LABEL name="LblETA" x="1" y="52" width="50" height="12" caption="Eta' danno" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboETA" x="1" y="62" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 - recente"/>
+						<LISTITEM value="2" text="2 - pregresso"/>
+						<LISTITEM value="3" text="3 - entrambi"/>
+                        <LISTITEM value="9" text="9 - non def."/>
+					</COMBOBOX>
+				</PAGE>
+				<PAGE name="PageDS2" caption="S2" onvalidate="Call CEF_FormDATISINTOMO_DS2_validate()">
+					<LABEL name="LblAGENTE" x="1" y="0" width="50" height="12" caption="Agente" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnAGENTE" x="93" y="0" width="30" height="10" onclick="Call CEF_FormDATISINTOMO_BtnAGENTE_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditAGENTEID" x="1" y="12" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white" onchange="Call CEF_FormDATISINTOMO_DS1_EditAGENTEID_onchange()"/>
+					<LABEL name="LblTrattino" x="22" y="12" width="4" height="12" caption="-" tooltip="" group="true" border="false"/>
+					<EDIT name="EditAGENTETEXT" x="26" y="12" width="95" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<LABEL name="LblNOMEAGENTE" x="1" y="26" width="50" height="12" caption="Nome Agente" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnNOMEAGENTE" x="93" y="26" width="30" height="10" onclick="Call CEF_FormDATISINTOMO_BtnNOMEAGENTE_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditNOMEAGENTEID" x="1" y="38" width="120" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<LABEL name="LblCHIOMAVAL" x="1" y="52" width="120" height="12" caption="Chioma non valutabile" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboCHIOMAVAL" x="1" y="62" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false" onselchange="Call CEF_FormDATISINTOMO_DS2_ComboCHIOMAVAL_onselchange()">
+						<LISTITEM value="1" text="1 - non valutabile"/>
+						<LISTITEM value="2" text="2 - valutabile"/>
+					</COMBOBOX>
+					<LABEL name="LblDIFF" x="1" y="76" width="120" height="12" caption="Diffusione" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboDIFF" x="1" y="86" width="120" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false" onselchange="Call CEF_FormDATISINTOMO_DS2_ComboDIFF_onselchange()">
+						<LISTITEM value="0" text="0%"/>
+						<LISTITEM value="5" text="5%"/>
+						<LISTITEM value="10" text="10%"/>
+						<LISTITEM value="15" text="15%"/>
+						<LISTITEM value="20" text="20%"/>
+						<LISTITEM value="25" text="25%"/>
+						<LISTITEM value="30" text="30%"/>
+						<LISTITEM value="35" text="35%"/>
+						<LISTITEM value="40" text="40%"/>
+						<LISTITEM value="45" text="45%"/>
+						<LISTITEM value="50" text="50%"/>
+						<LISTITEM value="55" text="55%"/>
+						<LISTITEM value="60" text="60%"/>
+						<LISTITEM value="65" text="65%"/>
+						<LISTITEM value="70" text="70%"/>
+						<LISTITEM value="75" text="75%"/>
+						<LISTITEM value="80" text="80%"/>
+						<LISTITEM value="85" text="85%"/>
+						<LISTITEM value="90" text="90%"/>
+						<LISTITEM value="95" text="95%"/>
+						<LISTITEM value="100" text="100%"/>
+					</COMBOBOX>
+				</PAGE>
+				<PAGE name="PageDS3" caption="S3" onvalidate="Call CEF_FormDATISINTOMO_DS3_validate()">
+					<LABEL name="lblNOTE" x="1" y="0" width="20" height="12" caption="Note" tooltip="" group="true" border="false"/>
+					<EDIT name="editNOTE" x="1" y="12" width="120" height="85" defaultvalue="" tooltip="" group="true" tabstop="true" border="true" sip="false" multiline="true" vscroll="true" onchange="Call CEF_EditNote_Change()"/>
+				</PAGE>
+			</FORM>
+			<FORM name="FORM_NAV_MEDIA" caption="NPM" width="130" height="130" tabsvisible="true" onload="Call NM_form_nav_media_load()" onunload="Call NM_form_nav_media_unload()">
+				<PAGE name="PAGE_C" caption="PC">
+					<LABEL name="LBL_PROJ" x="3" y="2" width="121" height="10" caption="Sistema di riferimento" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_PROJ" x="3" y="12" width="121" height="12" defaultvalue="" tooltip="" group="false" tabstop="true" border="true" readonly="true" sip="auto"/>
+					<CHECKBOX name="CHK_CUSTOM_C_P" onclick="Call NM_chkCustomP_click()" x="4" y="30" width="122" height="12" defaultvalue="" caption="C CUSTOM" group="true" tabstop="true" border="false" readonly="false" alignment="left"/>
+					<LABEL name="LBL_CUSTOM_C_N" caption="N (m)" tooltip="" x="40" y="43" width="20" height="12" group="true" border="false"/>
+					<LABEL name="LBL_CUSTOM_C_E" caption="E (m)" tooltip="" x="40" y="57" width="20" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_CUSTOM_C_N" x="60" y="43" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<EDIT name="EDIT_CUSTOM_C_E" x="60" y="57" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<CHECKBOX name="CHK_SELECTED_C_P" onclick="Call NM_chkSelectedP_click()" x="4" y="70" width="122" height="12" defaultvalue="" caption="C SELEZIONATO" group="true" tabstop="true" border="false" readonly="false" alignment="left"/>
+					<LABEL name="LBL_SELECTED_C_N" caption="N (m)" tooltip="" x="40" y="83" width="20" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_E" caption="E (m)" tooltip="" x="40" y="97" width="20" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_SELECTED_C_N" x="60" y="83" width="63" height="12" defaultvalue="" tooltip="" group="false" tabstop="false" border="true" readonly="false" sip="auto"/>
+					<EDIT name="EDIT_SELECTED_C_E" x="60" y="97" width="63" height="12" defaultvalue="" tooltip="" group="false" tabstop="false" border="true" readonly="false" sip="auto"/>
+					<BUTTON name="BTN_SET_C" x="30" y="114" width="60" height="14" caption="SET C" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnSetC_Click()"/>
+				</PAGE>
+				<PAGE name="PAGE_F" caption="PF">
+					<CHECKBOX name="CHK_GPS_F_P" onclick="Call NM_chkGpsFPoint_click()" x="4" y="1" width="122" height="12" defaultvalue="" caption="F GPS" group="true" tabstop="true" border="false" readonly="false" alignment="left"/>
+					<LABEL name="LBL_POS_E" caption="MAX POS" tooltip="" x="16" y="14" width="32" height="12" group="true" border="false"/>
+					<LABEL name="LBL_POS_R" caption="REC POS" tooltip="" x="16" y="29" width="32" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_GPS_POS_E" x="50" y="14" width="20" height="12" defaultvalue="300" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<LABEL name="LBL_GPS_POS_R" caption="0" x="50" y="29" width="20" height="12" tooltip="" group="false" border="true"/>
+					<BUTTON name="BTN_REC_GPS_F" x="72" y="14" width="25" height="12" caption="REC" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnRecGpsF_Click()"/>
+					<BUTTON name="BTN_STOP_GPS_F" x="97" y="14" width="25" height="12" caption="STOP" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnStopGpsF_Click()"/>
+					<BUTTON name="BTN_RESET_GPS_F" x="97" y="29" width="25" height="12" caption="RESET" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnResetGpsF_Click()"/>
+					<LABEL name="LBL_GPS_F_N" caption="N media (m)" tooltip="" x="20" y="43" width="40" height="12" group="true" border="false"/>
+					<LABEL name="LBL_GPS_F_E" caption="E media (m)" tooltip="" x="20" y="57" width="40" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_GPS_F_N" x="60" y="43" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="true" sip="auto"/>
+					<EDIT name="EDIT_GPS_F_E" x="60" y="57" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="true" sip="auto"/>
+					<CHECKBOX name="CHK_CUSTOM_F_P" onclick="Call NM_chkCustomFPoint_click()" x="4" y="70" width="122" height="12" defaultvalue="" caption="F CUSTOM" group="true" tabstop="true" border="false" readonly="false" alignment="left"/>
+					<LABEL name="LBL_CUSTOM_F_N" caption="N (m)" tooltip="" x="40" y="83" width="20" height="12" group="true" border="false"/>
+					<LABEL name="LBL_CUSTOM_F_E" caption="E (m)" tooltip="" x="40" y="97" width="20" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_CUSTOM_F_N" x="60" y="83" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="tue" readonly="false" sip="auto"/>
+					<EDIT name="EDIT_CUSTOM_F_E" x="60" y="97" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<BUTTON name="BTN_SET_F" x="30" y="114" width="60" height="14" caption="SET F" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnSetF_Click()"/>
+				</PAGE>
+				<PAGE name="PAGE_CONST" caption="DC">
+					<LABEL name="LBL_CONST_C" x="3" y="17" width="113" height="10" caption="Parametro C" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_CONST_C" x="20" y="29" width="62" height="12" defaultvalue="0.0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<BUTTON name="BTN_SET_PARAM_C" x="30" y="50" width="60" height="14" caption="SET DC" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnSetParamC_Click()"/>
+				</PAGE>
+				<PAGE name="PAGE_AID" caption="AID" onvalidate="Call NM_page_aid_ok()" onquerycancel="Call NM_page_aid_querycancel()">
+					<BUTTON name="BTN_GET_HD_A" caption="Calcola dist/azim" x="16" y="8" width="99" height="12" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnGetHdA_Click()"/>
+					<LABEL name="LBL_HDIST" x="13" y="26" width="77" height="12" caption="Distanza orizzontale (m)" tooltip="" group="true" border="false"/>
+					<LABEL name="LBL_HDIST_VAL" x="90" y="26" width="33" height="12" caption="---" tooltip="" group="true" border="true"/>
+					<LABEL name="LBL_A" x="13" y="41" width="74" height="12" caption="Azimut (o)" tooltip="" group="true" border="false"/>
+					<LABEL name="LBL_A_VAL" x="90" y="41" width="33" height="12" caption="---" tooltip="" group="true" border="true"/>
+					<LABEL name="LBL_INCL" x="13" y="56" width="74" height="12" caption="Inclinazione (o)" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_INCL" x="90" y="56" width="33" height="12" defaultvalue="0.0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<BUTTON name="BTN_GET_ID" caption="Calcola dist. inclinata" x="16" y="85" width="99" height="12" group="false" tabstop="true" border="false" alignment="center" onclick="Call NM_btnGetId_Click()"/>
+					<LABEL name="LBL_IDIST" x="13" y="103" width="74" height="12" caption="Distanza inclinata (m)" tooltip="" group="true" border="false"/>
+					<LABEL name="LBL_IDIST_VAL" x="90" y="103" width="33" height="12" caption="---" tooltip="" group="true" border="true"/>
+				</PAGE>
+			</FORM>
+			<FORM name="FORM_POSIZIONAMENTO" caption="POSIZIONAMENTO" width="130" height="130" tabsvisible="true" onload="Call POS_form_pos_load()" onunload="Call POS_form_pos_unload()">
+				<PAGE name="PAGE_AID" caption="AID">
+					<LABEL name="LBL_HDIST" x="13" y="0" width="77" height="12" caption="Distanza orizzontale (m)" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_HDIST_VAL" x="90" y="0" width="33" height="12" defaultvalue="0.0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<LABEL name="LBL_A" x="13" y="15" width="74" height="12" caption="Azimut (o)" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_A_VAL" x="90" y="15" width="33" height="12" defaultvalue="0.0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<LABEL name="LBL_INCL" x="13" y="30" width="74" height="12" caption="Inclinazione (o)" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_INCL" x="90" y="30" width="33" height="12" defaultvalue="0.0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<BUTTON name="BTN_GET_ID" caption="Calcola dist. inclinata" x="16" y="45" width="99" height="12" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnGetId_Click()"/>
+					<LABEL name="LBL_IDIST" x="13" y="60" width="74" height="12" caption="Distanza inclinata (m)" tooltip="" group="true" border="false"/>
+					<LABEL name="LBL_IDIST_VAL" x="90" y="60" width="33" height="12" caption="0.0" tooltip="" group="true" border="true"/>
+					<BUTTON name="BTN_SET_PARAM_AID" x="30" y="90" width="60" height="14" caption="SET AID" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnSetParamAID_Click()"/>
+				</PAGE>
+				<PAGE name="PAGE_CONST" caption="DC">
+					<LABEL name="LBL_CONST_C" x="3" y="17" width="113" height="10" caption="Parametro C" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_CONST_C" x="20" y="29" width="62" height="12" defaultvalue="0.0" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<BUTTON name="BTN_SET_PARAM_C" x="30" y="50" width="60" height="14" caption="SET DC" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnSetParamC_Click()"/>
+				</PAGE>
+				<PAGE name="PAGE_F" caption="PF">
+					<LABEL name="LBL_POS_E" caption="MAX POS" tooltip="" x="16" y="14" width="32" height="12" group="true" border="false"/>
+					<LABEL name="LBL_POS_R" caption="REC POS" tooltip="" x="16" y="29" width="32" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_GPS_POS_E" x="50" y="14" width="20" height="12" defaultvalue="300" tooltip="" group="false" tabstop="true" border="true" readonly="false" sip="auto"/>
+					<LABEL name="LBL_GPS_POS_R" caption="0" x="50" y="29" width="20" height="12" tooltip="" group="false" border="true"/>
+					<BUTTON name="BTN_REC_GPS_F" x="72" y="14" width="25" height="12" caption="REC" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnRecGpsF_Click()"/>
+					<BUTTON name="BTN_STOP_GPS_F" x="97" y="14" width="25" height="12" caption="STOP" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnStopGpsF_Click()"/>
+					<BUTTON name="BTN_RESET_GPS_F" x="97" y="29" width="25" height="12" caption="RESET" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnResetGpsF_Click()"/>
+					<LABEL name="LBL_GPS_F_N" caption="N media (m)" tooltip="" x="20" y="43" width="40" height="12" group="true" border="false"/>
+					<LABEL name="LBL_GPS_F_E" caption="E media (m)" tooltip="" x="20" y="57" width="40" height="12" group="true" border="false"/>
+					<EDIT name="EDIT_GPS_F_N" x="60" y="43" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="true" sip="auto"/>
+					<EDIT name="EDIT_GPS_F_E" x="60" y="57" width="63" height="12" defaultvalue="0" tooltip="" group="false" tabstop="true" border="true" readonly="true" sip="auto"/>
+					<BUTTON name="BTN_SET_F" x="30" y="114" width="60" height="14" caption="SET F" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnSetF_Click()"/>
+				</PAGE>
+				<PAGE name="PAGE_C" caption="PC" onquerycancel="Call POS_page_c_querycancel()" onvalidate="Call POS_page_c_onvalidate()">
+					<LABEL name="LBL_PROJ" x="3" y="2" width="121" height="10" caption="Sistema di riferimento" tooltip="" group="true" border="false"/>
+					<EDIT name="EDIT_PROJ" x="3" y="12" width="121" height="12" defaultvalue="" tooltip="" group="false" tabstop="true" border="true" readonly="true" sip="auto"/>
+					<BUTTON name="BTN_GET_C_POS" caption="Calcola posizionamento" x="16" y="30" width="99" height="12" group="false" tabstop="true" border="false" alignment="center" onclick="Call POS_btnGetCPOS_Click()"/>
+					<LABEL name="LBL_SELECTED_C_N" caption="Coordinate posizionamento:" tooltip="" x="3" y="43" width="90" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_N" caption="N (m)" tooltip="" x="40" y="56" width="20" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_N_VAL" caption="---" tooltip="" x="60" y="56" width="55" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_E" caption="E (m)" tooltip="" x="40" y="69" width="20" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_E_VAL" caption="---" tooltip="" x="60" y="69" width="55" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_POS" caption="N. Fix" tooltip="" x="40" y="82" width="20" height="12" group="true" border="false"/>
+					<LABEL name="LBL_SELECTED_C_POS_VAL" caption="---" tooltip="" x="60" y="82" width="55" height="12" group="true" border="false"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormRILDENDRO" caption="RILIEVI DENDROMETRICI" width="130" height="130" tabsvisible="false">
+				<PAGE name="PageLA1" caption="LA1" sip="false">
+					<BUTTON name="BtnCAV" x="24" y="38" width="80" height="20" onclick="Call CEF_btnCAV_Click()" caption="CAVALLETTAMENTO" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<BUTTON name="BtnHDOM" x="24" y="58" width="80" height="20" onclick="Call CEF_btnHDOM_Click()" caption="H DOMINANTE" tooltip="" tabstop="true" border="false" alignment="center"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormCAV" caption="CAV. AREA" width="130" height="130" onload="Call CEF_FormCAV_onload()" tabsvisible="false">
+				<PAGE name="PageC1" caption="C1" onsetactive="Call CEF_FormCAV_C1_setactive()" onvalidate="Call CEF_FormCAV_C1_onvalidate">
+					<BUTTON name="BtnPREV10" width="14" height="14" caption="&lt;&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnPREV10_click()"/>
+					<BUTTON name="BtnPREV" x="14" width="14" height="14" caption="&lt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnPREV_click()"/>
+					<BUTTON name="BtnNEXT" x="58" width="14" height="14" caption="&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnNEXT_click()"/>
+					<BUTTON name="BtnNEXT10" x="72" width="14" height="14" caption="&gt;&gt;" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnNEXT10_click()"/>
+					<BUTTON name="BtnADD" x="86" width="14" height="14" caption="+" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnPLUS_click()"/>
+					<BUTTON name="BtnREPEAT" x="100" width="14" height="14" caption="R" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnREPEAT_click()"/>
+					<BUTTON name="BtnDEL" x="114" width="14" height="14" caption="-" tooltip="" tabstop="true" border="false" alignment="center" onclick="Call CEF_FormCAV_BtnMINUS_click()"/>
+					<EDIT name="EditNCAV" x="28" width="30" height="14" defaultvalue="" tooltip="" tabstop="true" border="true" readonly="true" sip="false" alignment="center"/>
+					<LABEL name="LblSPECIE" x="1" y="18" width="50" height="12" caption="Specie" tooltip="" group="true" border="false"/>
+					<LABEL name="LblSPECIEID" x="1" y="28" width="20" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblSPECIETEXT" x="21" y="28" width="100" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblD1" x="1" y="46" width="50" height="12" caption="D1-D2 (cm)" tooltip="" group="true" border="false"/>
+					<LABEL name="LblD1V" x="55" y="46" width="28" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblD2" x="87" y="46" width="4" height="12" caption="-" tooltip="" group="true" border="false"/>
+					<LABEL name="LblD2V" x="92" y="46" width="28" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblALTEZZA" x="1" y="64" width="50" height="12" caption="Ril. Altezza" tooltip="" group="true" border="false"/>
+					<LABEL name="LblALTEZZAV" x="55" y="64" width="70" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblALTEZZAV" x="1" y="78" width="35" height="12" caption="Altezza (m)" tooltip="" group="true" border="false"/>
+					<LABEL name="LblALTEZZAVM" x="55" y="78" width="30" height="12" caption="" tooltip="" group="true" border="false"/>
+					<LABEL name="LblDENDRO" x="1" y="96" width="50" height="12" caption="Dendrotipo" tooltip="" group="true" border="false"/>
+					<LABEL name="LblDENDROV" x="55" y="96" width="70" height="12" caption="" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnSPECIE" x="83" y="110" width="40" height="12" onclick="Call CEF_FormCAV_BtnMODIFICA_Click()" caption="MODIFICA" tooltip="" tabstop="true" border="false" alignment="center"/>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormCAVNEW" caption="PIANTA" width="130" height="130" onload="Call CEF_FormCAVNEW_onload()" tabsvisible="false">
+				<PAGE name="PageC1" caption="C1" onload="Call CEF_FormCAVNEW_C1_onload()" onvalidate="Call CEF_FormCAVNEW_C1_onvalidate()">
+					<BUTTON name="BtnIMPORT" x="83" y="4" width="40" height="10" onclick="Call CEF_FormCAVNEW_BtnIMPORT_Click()" caption="IMPORT" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<LABEL name="LblSPECIE" x="1" y="18" width="50" height="12" caption="Specie" tooltip="" group="true" border="false"/>
+					<BUTTON name="BtnSPECIE" x="93" y="18" width="30" height="10" onclick="Call CEF_FormCAVNEW_BtnSPECIE_Click()" caption="SEL" tooltip="" tabstop="true" border="false" alignment="center"/>
+					<EDIT name="EditSPECIEID" x="1" y="28" width="20" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<EDIT name="EditSPECIETEXT" x="21" y="28" width="100" height="12" defaultvalue="" tooltip="" tabstop="true" border="false" sip="false" backgroundcolor="white"/>
+					<LABEL name="LblD1" x="1" y="46" width="50" height="12" caption="D1-D2 (cm)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditD1" x="55" y="46" width="28" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false" onchange="Call CEF_FormCAVNEW_EditD1_Change()"/>
+					<LABEL name="LblD2" x="87" y="46" width="4" height="12" caption="-" tooltip="" group="true" border="false"/>
+					<EDIT name="EditD2" x="92" y="46" width="28" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblALTEZZA" x="1" y="64" width="50" height="12" caption="Ril. Altezza" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboALTEZZA" x="55" y="64" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false" onselchange="Call CEF_FormCAVNEW_C1__ComboALTEZZA_onselchange()">
+					</COMBOBOX>
+					<LABEL name="LblALTEZZAV" x="1" y="78" width="50" height="12" caption="Altezza (m)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditALTEZZAV" x="55" y="78" width="30" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<LABEL name="LblDENDRO" x="1" y="96" width="50" height="12" caption="Dendrotipo" tooltip="" group="true" border="false"/>
+					<COMBOBOX name="ComboDENDRO" x="55" y="96" width="70" height="100" defaultvalue="" listtable="" listvaluefield="" listtextfield="" tooltip="" tabstop="true" border="false" sip="false" sort="false">
+						<LISTITEM value="1" text="1 - Alto fusto"/>
+						<LISTITEM value="2" text="2 - Pollone"/>
+						<LISTITEM value="3" text="3 - Matricina"/>
+						<LISTITEM value="4" text="4 - Non determ."/>
+					</COMBOBOX>
+				</PAGE>
+			</FORM>
+			<FORM name="CONECOFOR_FormHDOM" caption="ALTEZZA DOMINANTE" width="130" height="130" onload="Call CEF_FormHDOM_onload()" tabsvisible="false">
+				<PAGE name="PageHD1" caption="HD1" onsetactive="Call CEF_FormHDOM_HD1_setactive()" onvalidate="Call CEF_FormHDOM_HD1_validate()">
+					<LABEL name="LblID" x="2" y="0" width="14" height="10" caption="ID" tooltip="" group="true" border="false"/>
+					<LABEL name="LblDm" x="20" y="0" width="20" height="10" caption="Dm" tooltip="" group="true" border="false"/>
+					<LABEL name="LblSpecie" x="45" y="0" width="50" height="10" caption="Specie" tooltip="" group="true" border="false"/>
+					<LISTBOX name="lbox" x="1" y="11" width="120" height="50" group="false" tabstop="true" border="true" readonly="false" sort="false" font="courier new" showvalues="true" hscroll="true" vscroll="true" onselchange="Call CEF_FormHDOM_lbox_onselchange()"/>
+					<LABEL name="LblALTEZZAV" x="1" y="65" width="53" height="12" caption="Altezza (m)" tooltip="" group="true" border="false"/>
+					<EDIT name="EditALTEZZAV" x="55" y="65" width="30" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+					<BUTTON name="BtnSETH" x="93" y="65" width="30" height="12" onclick="Call CEF_FormHDOM_BtnSETH_Click()" caption="SET H" tooltip="" tabstop="true" border="false" alignment="center"/>
+				</PAGE>
+			</FORM>
+			<FORM name="FrmLISTBOX" caption="SELEZIONA" onload="Call CEF_FrmLISTBOX_onload()" width="130" height="130" tabsvisible="false">
+				<PAGE name="page1" onvalidate="Call CEF_FrmLISTBOX_page1_onvalidate()">
+					<LISTBOX name="lbox1" x="1" y="1" width="120" height="120" group="false" tabstop="true" border="true" readonly="false" sort="false" showvalues="true" hscroll="true" vscroll="true"/>
+				</PAGE>
+			</FORM>
+			<FORM name="FrmLISTBOX_NOVALUES" caption="SELEZIONA" onload="Call CEF_FrmLISTBOX_onload()" width="130" height="130" tabsvisible="false">
+				<PAGE name="page1" onvalidate="Call CEF_FrmLISTBOX_page1_onvalidate()">
+					<LISTBOX name="lbox1" x="1" y="1" width="120" height="120" group="false" tabstop="true" border="true" readonly="false" sort="false" showvalues="false" hscroll="true" vscroll="true"/>
+				</PAGE>
+			</FORM>
+			<FORM name="INFOFORM" caption="CONECOFOR MOBILE" width="130" height="130" onload="Call CEF_FrmINFOFORM_onload()">
+				<PAGE name="LICENCE" caption="VERSIONE" backgroundcolor="White" sip="false">
+					<LABEL name="Lbl1" x="10" y="23" width="110" height="10" caption="CONECOFOR MOBILE" tooltip="" border="false" fontsize="9" fontstyle="bold"/>
+					<LABEL name="Lbl2" x="10" y="35" width="60" height="10" caption="Release 3" tooltip="" aborder="false" fontsize="9" fontstyle="bold"/>
+					<LABEL name="Lbl2" x="10" y="52" width="110" height="10" caption="RILIEVI CONECOFOR" tooltip="" border="false" fontsize="9" fontstyle="bold"/>
+					<LABEL name="Lbl3" x="40" y="100" width="80" height="10" caption="EFFETRESEIZERO srl" tooltip="" alignment="right" border="false" fontsize="9" fontstyle="bold"/>
+					<LABEL name="Lbl4" x="40" y="110" width="80" height="10" caption="info@f360.it" tooltip="" alignment="right" border="false" fontsize="9" fontstyle="bold"/>
+				</PAGE>
+				<PAGE name="INFO" caption="Info" width="130" height="130" sip="false">
+					<EDIT name="editINFO" x="0" y="0" width="125" height="120" tooltip="" readonly="true" group="true" defaultvalue="" tabstop="true" border="false" sip="false" multiline="true" vscroll="true"/>
+				</PAGE>
+			</FORM>
+			<FORM name="FrmGET_VALUE" caption="INSERISCI VALORE" onload="Call CEF_FrmGET_VALUE_onload()" width="130" height="20" tabsvisible="false">
+				<PAGE name="page1" onvalidate="Call CEF_FrmGET_VALUE_page1_onvalidate()">
+					<LABEL name="Lbl1" x="1" y="0" width="120" height="12" caption="imposta" tooltip="" group="true" border="false"/>
+					<EDIT name="Edit1" x="1" y="14" width="50" height="12" defaultvalue="" tooltip="" tabstop="true" border="true" sip="false"/>
+				</PAGE>
+			</FORM>
+		</FORMS>
+		<SYSTEMOBJECTS>
+			<GPS onposition="Call GpsOnPosition_EventHandler()"/>
+		</SYSTEMOBJECTS>
+	</APPLET>
+	<SCRIPT language="VBScript" src="conecofor_mobile_rel3.vbs"/>
+</ArcPad>
